@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::get('/{name}', function () {
+    return redirect('/');
+})->where('name','[A-Za-z]+');
+
 
 Auth::routes();
 
